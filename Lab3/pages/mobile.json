@@ -1,0 +1,109 @@
+{
+  "product": {
+    "name": "Nova X5 Pro",
+    "brand": "Nova",
+    "model": "X5 Pro",
+    "category": "Smartphone",
+    "price": 54999,
+    "currency": "INR",
+    "rating": 4.7,
+    "availability": "In Stock",
+
+    "display": {
+      "size": "6.7 inches",
+      "type": "AMOLED",
+      "resolution": "3200 x 1440 pixels",
+      "refreshRate": "120Hz",
+      "brightness": "2500 nits",
+      "protection": "Gorilla Glass Victus 2"
+    },
+
+    "processor": {
+      "chipset": "Snapdragon 8 Gen 4",
+      "cpu": "Octa-core",
+      "gpu": "Adreno 830"
+    },
+
+    "memory": {
+      "ram": "12GB",
+      "storage": "256GB",
+      "expandableStorage": false
+    },
+
+    "camera": {
+      "rear": {
+        "main": "50MP",
+        "ultrawide": "48MP",
+        "telephoto": "64MP",
+        "features": [
+          "Optical Image Stabilization",
+          "4K Video Recording",
+          "Night Mode",
+          "HDR"
+        ]
+      },
+      "front": {
+        "resolution": "32MP",
+        "features": [
+          "Portrait Mode",
+          "HDR",
+          "4K Video Recording"
+        ]
+      }
+    },
+
+    "battery": {
+      "capacity": "5000mAh",
+      "charging": "100W wired",
+      "wirelessCharging": "50W",
+      "reverseCharging": true
+    },
+
+    "connectivity": {
+      "network": "5G",
+      "wifi": "Wi-Fi 7",
+      "bluetooth": "Bluetooth 5.4",
+      "usb": "USB Type-C",
+      "nfc": true,
+      "gps": true
+    },
+
+    "security": {
+      "fingerprint": "In-display ultrasonic",
+      "faceUnlock": true
+    },
+
+    "operatingSystem": {
+      "name": "Android",
+      "version": "16",
+      "ui": "NovaOS 4"
+    },
+
+    "dimensions": {
+      "height": "162.1 mm",
+      "width": "75.4 mm",
+      "thickness": "8.2 mm",
+      "weight": "198 g"
+    },
+
+    "colors": [
+      "Midnight Black",
+      "Titanium Silver",
+      "Ocean Blue"
+    ],
+
+    "boxContents": [
+      "Nova X5 Pro",
+      "100W Charger",
+      "USB Type-C Cable",
+      "SIM Ejector Tool",
+      "Protective Case",
+      "User Guide"
+    ],
+
+    "warranty": {
+      "period": "1 Year",
+      "type": "Manufacturer Warranty"
+    }
+  }
+}

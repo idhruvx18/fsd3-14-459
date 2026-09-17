@@ -1,0 +1,1148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>MacBook M5 — Home</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+            background: #050505;
+            color: #fff;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        /* ================= NAVBAR ================= */
+
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            padding: 18px 7%;
+        }
+
+        nav {
+            max-width: 1200px;
+            margin: auto;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            padding: 14px 22px;
+
+            background: rgba(255, 255, 255, 0.08);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            border-radius: 20px;
+
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+
+            box-shadow: 0 8px 40px rgba(0, 0, 0, 0.3);
+        }
+
+        .logo {
+            font-size: 21px;
+            font-weight: 700;
+        }
+
+        .logo span {
+            color: #999;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+        }
+
+        .nav-links a {
+            color: #ccc;
+            font-size: 14px;
+            transition: 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: #fff;
+        }
+
+        .nav-buy {
+            background: #fff;
+            color: #000 !important;
+            padding: 9px 18px;
+            border-radius: 20px;
+            font-weight: 600;
+        }
+
+        /* ================= HERO ================= */
+
+        .hero {
+            min-height: 100vh;
+            position: relative;
+            overflow: hidden;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            text-align: center;
+            padding: 150px 20px 80px;
+
+            background:
+                radial-gradient(
+                    circle at 15% 25%,
+                    rgba(0, 200, 255, 0.38),
+                    transparent 32%
+                ),
+                radial-gradient(
+                    circle at 85% 20%,
+                    rgba(160, 70, 255, 0.4),
+                    transparent 34%
+                ),
+                radial-gradient(
+                    circle at 50% 100%,
+                    rgba(255, 60, 150, 0.28),
+                    transparent 40%
+                ),
+                #050505;
+        }
+
+        .hero::after {
+            content: "";
+            position: absolute;
+
+            width: 600px;
+            height: 600px;
+
+            background: rgba(100, 80, 255, 0.16);
+            filter: blur(130px);
+            border-radius: 50%;
+
+            left: 50%;
+            top: 50%;
+
+            transform: translate(-50%, -50%);
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 1050px;
+        }
+
+        .hero-label {
+            display: inline-block;
+
+            padding: 8px 18px;
+            margin-bottom: 25px;
+
+            border-radius: 30px;
+
+            background: rgba(255,255,255,0.08);
+            border: 1px solid rgba(255,255,255,0.16);
+
+            backdrop-filter: blur(15px);
+
+            color: #bbb;
+            font-size: 14px;
+        }
+
+        .hero h1 {
+            font-size: clamp(70px, 12vw, 150px);
+            letter-spacing: -9px;
+            line-height: 0.9;
+
+            background:
+                linear-gradient(
+                    110deg,
+                    #fff,
+                    #8edfff,
+                    #b68cff,
+                    #fff
+                );
+
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+
+            margin-bottom: 30px;
+        }
+
+        .hero h2 {
+            font-size: clamp(25px, 4vw, 42px);
+            margin-bottom: 20px;
+        }
+
+        .hero p {
+            color: #999;
+            max-width: 720px;
+            margin: auto;
+            font-size: 18px;
+        }
+
+        .hero-image {
+            width: min(800px, 90%);
+            margin: 60px auto 40px;
+
+            filter:
+                drop-shadow(0 35px 60px rgba(0,0,0,0.7));
+
+            transition: 0.5s;
+        }
+
+        .hero-image:hover {
+            transform: translateY(-10px) scale(1.02);
+        }
+
+        .hero-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .button {
+            display: inline-block;
+
+            padding: 13px 27px;
+
+            border-radius: 30px;
+
+            font-weight: 600;
+
+            transition: 0.3s;
+        }
+
+        .button-primary {
+            background: #fff;
+            color: #000;
+        }
+
+        .button-secondary {
+            background: rgba(255,255,255,0.08);
+            border: 1px solid rgba(255,255,255,0.2);
+            color: #fff;
+            backdrop-filter: blur(15px);
+        }
+
+        .button:hover {
+            transform: translateY(-3px);
+        }
+
+        /* ================= COMMON ================= */
+
+        section {
+            padding: 120px 7%;
+            max-width: 1300px;
+            margin: auto;
+        }
+
+        .section-heading {
+            text-align: center;
+            max-width: 750px;
+            margin: 0 auto 60px;
+        }
+
+        .section-heading h2 {
+            font-size: clamp(40px, 6vw, 70px);
+            letter-spacing: -4px;
+            line-height: 1;
+            margin-bottom: 20px;
+        }
+
+        .section-heading p {
+            color: #888;
+            font-size: 17px;
+        }
+
+        /* ================= GLASS CARDS ================= */
+
+        .glass-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 22px;
+        }
+
+        .glass-card {
+            position: relative;
+
+            min-height: 280px;
+            padding: 35px;
+
+            border-radius: 28px;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    rgba(255,255,255,0.12),
+                    rgba(255,255,255,0.035)
+                );
+
+            border: 1px solid rgba(255,255,255,0.14);
+
+            backdrop-filter: blur(22px);
+            -webkit-backdrop-filter: blur(22px);
+
+            box-shadow:
+                inset 0 1px 0 rgba(255,255,255,0.12),
+                0 25px 70px rgba(0,0,0,0.3);
+
+            overflow: hidden;
+
+            transition: 0.35s;
+        }
+
+        .glass-card::before {
+            content: "";
+
+            position: absolute;
+
+            width: 180px;
+            height: 180px;
+
+            right: -70px;
+            top: -70px;
+
+            background: rgba(110,80,255,0.22);
+
+            border-radius: 50%;
+            filter: blur(65px);
+        }
+
+        .glass-card:hover {
+            transform: translateY(-8px);
+
+            border-color: rgba(255,255,255,0.3);
+
+            box-shadow:
+                0 35px 90px rgba(0,0,0,0.5);
+        }
+
+        .icon {
+            font-size: 35px;
+            margin-bottom: 35px;
+        }
+
+        .glass-card h3 {
+            font-size: 25px;
+            margin-bottom: 12px;
+        }
+
+        .glass-card p {
+            color: #999;
+            font-size: 15px;
+        }
+
+        /* ================= M5 SECTION ================= */
+
+        .m5-section {
+            max-width: none;
+
+            background:
+                radial-gradient(
+                    circle at center,
+                    rgba(110,70,255,0.18),
+                    transparent 55%
+                );
+
+            text-align: center;
+        }
+
+        .m5-content {
+            max-width: 950px;
+            margin: auto;
+        }
+
+        .m5-title {
+            font-size: clamp(100px, 18vw, 220px);
+            line-height: 0.8;
+            letter-spacing: -15px;
+
+            background:
+                linear-gradient(
+                    120deg,
+                    #fff,
+                    #7ee5ff,
+                    #a875ff
+                );
+
+            -webkit-background-clip: text;
+            color: transparent;
+        }
+
+        .m5-content h3 {
+            font-size: 32px;
+            margin: 35px 0 15px;
+        }
+
+        .m5-content p {
+            color: #888;
+            max-width: 650px;
+            margin: auto;
+            font-size: 18px;
+        }
+
+        .m5-stats {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+            margin-top: 50px;
+        }
+
+        .stat {
+            min-width: 180px;
+            padding: 25px;
+
+            border-radius: 20px;
+
+            background: rgba(255,255,255,0.06);
+            border: 1px solid rgba(255,255,255,0.12);
+
+            backdrop-filter: blur(15px);
+        }
+
+        .stat strong {
+            display: block;
+            font-size: 28px;
+        }
+
+        .stat span {
+            color: #777;
+            font-size: 13px;
+        }
+
+        /* ================= IMAGE FEATURE ================= */
+
+        .image-feature {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            align-items: center;
+            gap: 70px;
+        }
+
+        .image-feature img {
+            width: 100%;
+
+            border-radius: 30px;
+
+            filter:
+                drop-shadow(0 30px 50px rgba(0,0,0,0.6));
+        }
+
+        .image-feature h2 {
+            font-size: clamp(40px, 5vw, 65px);
+            line-height: 1;
+            letter-spacing: -3px;
+            margin-bottom: 25px;
+        }
+
+        .image-feature p {
+            color: #888;
+            font-size: 17px;
+            margin-bottom: 30px;
+        }
+
+        /* ================= WHY MAC ================= */
+
+        .why-section {
+            max-width: none;
+
+            background:
+                radial-gradient(
+                    circle at 80% 50%,
+                    rgba(0,160,255,0.15),
+                    transparent 40%
+                );
+        }
+
+        .why-grid {
+            max-width: 1100px;
+            margin: auto;
+
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 18px;
+        }
+
+        .why-card {
+            padding: 30px;
+
+            border-radius: 24px;
+
+            background: rgba(255,255,255,0.05);
+            border: 1px solid rgba(255,255,255,0.1);
+
+            backdrop-filter: blur(15px);
+
+            transition: 0.3s;
+        }
+
+        .why-card:hover {
+            transform: translateY(-5px);
+            background: rgba(255,255,255,0.08);
+        }
+
+        .why-card h3 {
+            margin-bottom: 10px;
+        }
+
+        .why-card p {
+            color: #888;
+            font-size: 14px;
+        }
+
+        /* ================= CTA ================= */
+
+        .cta {
+            max-width: none;
+            text-align: center;
+            padding: 160px 20px;
+
+            background:
+                radial-gradient(
+                    circle at center,
+                    rgba(150,80,255,0.22),
+                    transparent 55%
+                );
+        }
+
+        .cta h2 {
+            font-size: clamp(50px, 8vw, 95px);
+            line-height: 0.95;
+            letter-spacing: -5px;
+            margin-bottom: 25px;
+        }
+
+        .cta p {
+            color: #888;
+            margin-bottom: 35px;
+        }
+
+        /* ================= FOOTER ================= */
+
+        footer {
+            border-top: 1px solid rgba(255,255,255,0.1);
+
+            padding: 55px 7%;
+
+            text-align: center;
+
+            color: #666;
+        }
+
+        footer h3 {
+            color: white;
+            margin-bottom: 10px;
+        }
+
+        footer nav {
+            background: none;
+            border: none;
+            box-shadow: none;
+            backdrop-filter: none;
+
+            justify-content: center;
+
+            padding: 20px 0;
+        }
+
+        footer nav a {
+            color: #777;
+            margin: 0 12px;
+            font-size: 14px;
+        }
+
+        footer nav a:hover {
+            color: white;
+        }
+
+        /* ================= RESPONSIVE ================= */
+
+        @media (max-width: 950px) {
+
+            .nav-links {
+                display: none;
+            }
+
+            .glass-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .why-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .image-feature {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+        }
+
+        @media (max-width: 600px) {
+
+            header {
+                padding: 12px;
+            }
+
+            nav {
+                padding: 12px 16px;
+            }
+
+            section {
+                padding: 80px 20px;
+            }
+
+            .glass-grid,
+            .why-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .hero h1 {
+                letter-spacing: -5px;
+            }
+
+            .m5-title {
+                letter-spacing: -8px;
+            }
+
+            .hero-image {
+                margin-top: 40px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<!-- ================= NAVIGATION ================= -->
+
+<header>
+
+    <nav>
+
+        <a href="index.html" class="logo">
+            MacBook <span>M5</span>
+        </a>
+
+        <ul class="nav-links">
+
+            <li>
+                <a href="index.html">Home</a>
+            </li>
+
+            <li>
+                <a href="product.html">Product</a>
+            </li>
+
+            <li>
+                <a href="content.html">Content</a>
+            </li>
+
+            <li>
+                <a href="about.html">About</a>
+            </li>
+
+        </ul>
+
+        <a href="product.html#buy" class="nav-buy">
+            Buy
+        </a>
+
+    </nav>
+
+</header>
+
+
+<main>
+
+    <!-- ================= HERO ================= -->
+
+    <section class="hero">
+
+        <div class="hero-content">
+
+            <div class="hero-label">
+                Introducing MacBook M5
+            </div>
+
+            <h1>
+                MacBook M5
+            </h1>
+
+            <h2>
+                Power that feels effortless.
+            </h2>
+
+            <p>
+                Meet the next generation of MacBook.
+                Designed for developers, students, creators and
+                everyone who wants more from their computer.
+            </p>
+
+            <img
+                src="images/mac-m5-front.jpg"
+                alt="MacBook M5 open showing its display"
+                class="hero-image"
+            >
+
+            <div class="hero-buttons">
+
+                <a
+                    href="product.html"
+                    class="button button-primary"
+                >
+                    Explore MacBook
+                </a>
+
+                <a
+                    href="about.html"
+                    class="button button-secondary"
+                >
+                    Discover More
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= INTRO ================= -->
+
+    <section>
+
+        <div class="section-heading">
+
+            <h2>
+                Built for your next big idea.
+            </h2>
+
+            <p>
+                Whether you're writing code, creating content,
+                studying or simply getting things done,
+                MacBook M5 is designed to keep up.
+            </p>
+
+        </div>
+
+
+        <div class="glass-grid">
+
+            <article class="glass-card">
+
+                <div class="icon">⚡</div>
+
+                <h3>
+                    Incredible Performance
+                </h3>
+
+                <p>
+                    M5 delivers powerful computing performance
+                    for demanding applications and everyday tasks.
+                </p>
+
+            </article>
+
+
+            <article class="glass-card">
+
+                <div class="icon">🔋</div>
+
+                <h3>
+                    Made to Go Further
+                </h3>
+
+                <p>
+                    Efficient Apple Silicon helps you stay productive
+                    without constantly searching for a power outlet.
+                </p>
+
+            </article>
+
+
+            <article class="glass-card">
+
+                <div class="icon">✨</div>
+
+                <h3>
+                    Beautifully Designed
+                </h3>
+
+                <p>
+                    A premium, portable design combined with
+                    a stunning high-resolution display.
+                </p>
+
+            </article>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= M5 ================= -->
+
+    <section class="m5-section">
+
+        <div class="m5-content">
+
+            <div class="m5-title">
+                M5
+            </div>
+
+            <h3>
+                A new generation of Apple Silicon.
+            </h3>
+
+            <p>
+                Designed to balance performance and efficiency,
+                M5 brings powerful computing and dedicated
+                acceleration for supported AI workloads.
+            </p>
+
+
+            <div class="m5-stats">
+
+                <div class="stat">
+                    <strong>CPU</strong>
+                    <span>High performance computing</span>
+                </div>
+
+                <div class="stat">
+                    <strong>GPU</strong>
+                    <span>Graphics performance</span>
+                </div>
+
+                <div class="stat">
+                    <strong>AI</strong>
+                    <span>Neural acceleration</span>
+                </div>
+
+                <div class="stat">
+                    <strong>macOS</strong>
+                    <span>Seamless software</span>
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= DISPLAY ================= -->
+
+    <section class="image-feature">
+
+        <div>
+
+            <img
+                src="images/mac-m5-display.jpg"
+                alt="MacBook M5 displaying colorful content"
+            >
+
+        </div>
+
+
+        <div>
+
+            <h2>
+                See every detail.
+            </h2>
+
+            <p>
+                Experience crisp text, rich colors and detailed
+                visuals on a high-resolution Retina display.
+                From writing code to watching movies,
+                everything looks better.
+            </p>
+
+            <a
+                href="product.html#specifications"
+                class="button button-secondary"
+            >
+                View Specifications
+            </a>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= PORTABILITY ================= -->
+
+    <section class="image-feature">
+
+        <div>
+
+            <h2>
+                Your workspace. Anywhere.
+            </h2>
+
+            <p>
+                Take your projects with you. MacBook M5 combines
+                performance and portability in a design made
+                for life on the move.
+            </p>
+
+            <a
+                href="about.html"
+                class="button button-secondary"
+            >
+                Why MacBook?
+            </a>
+
+        </div>
+
+
+        <div>
+
+            <img
+                src="images/mac-m5-work.jpg"
+                alt="Person using MacBook M5 for work"
+            >
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= WHY MAC ================= -->
+
+    <section class="why-section">
+
+        <div class="section-heading">
+
+            <h2>
+                Why MacBook M5?
+            </h2>
+
+            <p>
+                Everything works together to give you
+                a smoother computing experience.
+            </p>
+
+        </div>
+
+
+        <div class="why-grid">
+
+            <article class="why-card">
+
+                <h3>
+                    Performance
+                </h3>
+
+                <p>
+                    Powerful hardware for development,
+                    productivity and creative workflows.
+                </p>
+
+            </article>
+
+
+            <article class="why-card">
+
+                <h3>
+                    macOS
+                </h3>
+
+                <p>
+                    A refined operating system designed
+                    specifically around Mac hardware.
+                </p>
+
+            </article>
+
+
+            <article class="why-card">
+
+                <h3>
+                    Security
+                </h3>
+
+                <p>
+                    Hardware and software technologies
+                    designed with security in mind.
+                </p>
+
+            </article>
+
+
+            <article class="why-card">
+
+                <h3>
+                    Ecosystem
+                </h3>
+
+                <p>
+                    Work seamlessly with your other
+                    Apple devices and services.
+                </p>
+
+            </article>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= CONTENT NAVIGATION ================= -->
+
+    <section>
+
+        <div class="section-heading">
+
+            <h2>
+                Explore MacBook M5.
+            </h2>
+
+            <p>
+                Dive deeper into the product and discover
+                everything it has to offer.
+            </p>
+
+        </div>
+
+
+        <div class="glass-grid">
+
+            <a href="product.html" class="glass-card">
+
+                <div class="icon">💻</div>
+
+                <h3>
+                    Product
+                </h3>
+
+                <p>
+                    Explore features, specifications,
+                    configurations and purchasing options.
+                </p>
+
+            </a>
+
+
+            <a href="content.html" class="glass-card">
+
+                <div class="icon">📖</div>
+
+                <h3>
+                    Content
+                </h3>
+
+                <p>
+                    Read more about MacBook, Apple Silicon,
+                    productivity and technology.
+                </p>
+
+            </a>
+
+
+            <a href="about.html" class="glass-card">
+
+                <div class="icon">◉</div>
+
+                <h3>
+                    About
+                </h3>
+
+                <p>
+                    Discover the philosophy and ideas
+                    behind the MacBook M5 experience.
+                </p>
+
+            </a>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= CTA ================= -->
+
+    <section class="cta">
+
+        <h2>
+            Ready to<br>
+            experience M5?
+        </h2>
+
+        <p>
+            Your next computer starts here.
+        </p>
+
+        <a
+            href="product.html#buy"
+            class="button button-primary"
+        >
+            Buy MacBook M5
+        </a>
+
+    </section>
+
+</main>
+
+
+<!-- ================= FOOTER ================= -->
+
+<footer>
+
+    <h3>
+        MacBook M5
+    </h3>
+
+    <p>
+        Power. Efficiency. Beautifully simple.
+    </p>
+
+    <nav>
+
+        <a href="home.html">
+            Home
+        </a>
+
+        <a href="product.html">
+            Product
+        </a>
+
+        <a href="content.html">
+            Content
+        </a>
+
+        <a href="about.html">
+            About
+        </a>
+
+    </nav>
+
+    <p>
+        &copy; 2026 MacBook M5. All rights reserved.
+    </p>
+
+</footer>
+
+</body>
+</html>

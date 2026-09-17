@@ -1,14 +1,21 @@
-import http from "http";
+import http from 'http';
 
 const server = http.createServer((req, res) => {
-  res.writeHead(200, { "content-type": "application/json" });
-  const product = {
-    name: "Mobile",
-    price: 25000,
-    discount: "10%",
-    company: "Samsung",
+  
+  res.writeHead(200, { 'Content-Type': 'application/json' });
+
+
+  const data = {
+    product: 'hp laptop',
+    price: '80000',
+    color:'black',
+    category:'electronics'
   };
-  res.end(JSON.stringify(product));
+
+  
+  res.end(JSON.stringify(data));
 });
 
-server.listen(3000, () => console.log("server is running..."));
+server.listen(3000, () => {
+  console.log('Server is running on http://localhost:3000');
+});
