@@ -1,2 +1,2 @@
-FS is easy in JS
-it can add, read and update contents
+FS IS EASY IN JS
+it can add update and read data
