@@ -1,0 +1,707 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>VELORA | Enquiry</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background: #0b0c0e;
+
+            color: #f5f1eb;
+
+            font-family: "Inter", sans-serif;
+        }
+
+        /* ================= NAVBAR ================= */
+
+        .navbar {
+            height: 72px;
+
+            padding: 0 8%;
+
+            display: flex;
+
+            align-items: center;
+            justify-content: space-between;
+
+            background: #0b0c0e;
+
+            border-bottom: 1px solid rgba(255,255,255,0.12);
+
+            position: sticky;
+            top: 0;
+
+            z-index: 100;
+        }
+
+        .logo {
+            color: white;
+
+            text-decoration: none;
+
+            font-family: "Cormorant Garamond", serif;
+
+            font-size: 30px;
+
+            letter-spacing: 7px;
+        }
+
+        nav {
+            display: flex;
+
+            gap: 42px;
+        }
+
+        nav a {
+            color: #eeeeee;
+
+            text-decoration: none;
+
+            font-size: 14px;
+
+            padding: 27px 4px 24px;
+
+            transition: 0.3s;
+        }
+
+        nav a:hover,
+        nav a.active {
+            color: #e6bd82;
+
+            border-bottom: 2px solid #e6bd82;
+        }
+
+        .nav-icons {
+            display: flex;
+
+            gap: 18px;
+        }
+
+        .nav-icons button {
+            background: none;
+
+            border: none;
+
+            color: white;
+
+            font-size: 21px;
+
+            cursor: pointer;
+        }
+
+        /* ================= HERO ================= */
+
+        .page-heading {
+            text-align: center;
+
+            padding: 75px 20px 45px;
+        }
+
+        .eyebrow {
+            color: #e6bd82;
+
+            font-size: 11px;
+
+            letter-spacing: 5px;
+
+            margin-bottom: 18px;
+        }
+
+        .page-heading h1 {
+            font-family: "Cormorant Garamond", serif;
+
+            font-size: 65px;
+
+            font-weight: 600;
+
+            margin-bottom: 12px;
+        }
+
+        .page-heading p:last-child {
+            color: #aaa49d;
+
+            line-height: 1.7;
+        }
+
+        /* ================= ENQUIRY AREA ================= */
+
+        .enquiry-section {
+            padding: 30px 10% 100px;
+
+            display: grid;
+
+            grid-template-columns: 0.8fr 1.2fr;
+
+            gap: 70px;
+
+            max-width: 1250px;
+
+            margin: auto;
+        }
+
+        /* ================= INFO ================= */
+
+        .contact-info {
+            padding-top: 25px;
+        }
+
+        .contact-info h2 {
+            font-family: "Cormorant Garamond", serif;
+
+            font-size: 48px;
+
+            line-height: 1;
+
+            margin-bottom: 22px;
+        }
+
+        .contact-info > p {
+            color: #aaa49d;
+
+            line-height: 1.8;
+
+            margin-bottom: 35px;
+        }
+
+        .info-item {
+            padding: 20px 0;
+
+            border-top: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .info-item strong {
+            display: block;
+
+            color: #e6bd82;
+
+            font-size: 11px;
+
+            letter-spacing: 2px;
+
+            margin-bottom: 8px;
+        }
+
+        .info-item span {
+            color: #ddd;
+
+            font-size: 14px;
+        }
+
+        /* ================= FORM ================= */
+
+        .form-container {
+            background: #101214;
+
+            border: 1px solid rgba(255,255,255,0.12);
+
+            padding: 40px;
+        }
+
+        .form-container h2 {
+            font-family: "Cormorant Garamond", serif;
+
+            font-size: 40px;
+
+            margin-bottom: 30px;
+        }
+
+        .form-row {
+            display: grid;
+
+            grid-template-columns: 1fr 1fr;
+
+            gap: 20px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+
+            font-size: 11px;
+
+            letter-spacing: 1px;
+
+            color: #ddd;
+
+            margin-bottom: 8px;
+        }
+
+        input,
+        select,
+        textarea {
+            width: 100%;
+
+            padding: 14px 15px;
+
+            background: #0b0c0e;
+
+            border: 1px solid rgba(255,255,255,0.16);
+
+            color: white;
+
+            font-family: "Inter", sans-serif;
+
+            font-size: 13px;
+
+            outline: none;
+
+            transition: 0.3s;
+        }
+
+        input:focus,
+        select:focus,
+        textarea:focus {
+            border-color: #e6bd82;
+        }
+
+        select {
+            cursor: pointer;
+        }
+
+        textarea {
+            height: 140px;
+
+            resize: vertical;
+        }
+
+        textarea::placeholder,
+        input::placeholder {
+            color: #777;
+        }
+
+        .submit-btn {
+            width: 100%;
+
+            padding: 15px;
+
+            margin-top: 5px;
+
+            background: #f1d2a2;
+
+            border: none;
+
+            color: #111;
+
+            font-weight: 600;
+
+            font-size: 13px;
+
+            letter-spacing: 1.5px;
+
+            cursor: pointer;
+
+            transition: 0.3s;
+        }
+
+        .submit-btn:hover {
+            background: white;
+
+            transform: translateY(-2px);
+        }
+
+        /* ================= FOOTER ================= */
+
+        footer {
+            padding: 35px 10%;
+
+            display: flex;
+
+            justify-content: space-between;
+
+            align-items: center;
+
+            border-top: 1px solid rgba(255,255,255,0.1);
+
+            color: #aaa49d;
+        }
+
+        footer .logo {
+            font-size: 23px;
+        }
+
+        /* ================= RESPONSIVE ================= */
+
+        @media (max-width: 850px) {
+
+            nav {
+                display: none;
+            }
+
+            .enquiry-section {
+                grid-template-columns: 1fr;
+
+                padding: 20px 7% 70px;
+
+                gap: 40px;
+            }
+
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+
+            .page-heading h1 {
+                font-size: 55px;
+            }
+        }
+
+        @media (max-width: 600px) {
+
+            .navbar {
+                padding: 0 5%;
+            }
+
+            .form-container {
+                padding: 25px;
+            }
+
+            footer {
+                flex-direction: column;
+
+                gap: 15px;
+            }
+        }
+
+    </style>
+</head>
+
+<body>
+
+
+    <!-- ================= NAVBAR ================= -->
+
+    <header class="navbar">
+
+        <a href="/prg1_hp" class="logo">
+            VELORA
+        </a>
+
+        <nav>
+
+            <a href="/prg1_hp">
+                Home
+            </a>
+
+            <a href="#">
+                Shop
+            </a>
+
+            <a href="/about">
+                About
+            </a>
+
+            <a href="enquiry.html" class="active">
+                Contact
+            </a>
+
+        </nav>
+
+        <div class="nav-icons">
+            <button>⌕</button>
+            <button>♙</button>
+            <button>🛒</button>
+        </div>
+
+    </header>
+
+
+    <!-- ================= PAGE HEADING ================= -->
+
+    <section class="page-heading">
+
+        <p class="eyebrow">
+            CONNECT WITH VELORA
+        </p>
+
+        <h1>
+            Make An Enquiry
+        </h1>
+
+        <p>
+            Have a question about our timepieces? We'd love to hear from you.
+        </p>
+
+    </section>
+
+
+    <!-- ================= ENQUIRY ================= -->
+
+    <section class="enquiry-section">
+
+
+        <!-- CONTACT INFORMATION -->
+
+        <div class="contact-info">
+
+            <p class="eyebrow">
+                GET IN TOUCH
+            </p>
+
+            <h2>
+                Let’s Talk About Time.
+            </h2>
+
+            <p>
+                Whether you are looking for a particular timepiece,
+                need help choosing a watch, or want to know more
+                about VELORA, send us an enquiry.
+            </p>
+
+
+            <div class="info-item">
+
+                <strong>
+                    EMAIL
+                </strong>
+
+                <span>
+                    contact@velora.com
+                </span>
+
+            </div>
+
+
+            <div class="info-item">
+
+                <strong>
+                    PHONE
+                </strong>
+
+                <span>
+                    +91 98765 43210
+                </span>
+
+            </div>
+
+
+            <div class="info-item">
+
+                <strong>
+                    BUSINESS HOURS
+                </strong>
+
+                <span>
+                    Monday – Saturday | 10:00 AM – 7:00 PM
+                </span>
+
+            </div>
+
+
+            <div class="info-item">
+
+                <strong>
+                    LOCATION
+                </strong>
+
+                <span>
+                    New Delhi, India
+                </span>
+
+            </div>
+
+        </div>
+
+
+        <!-- FORM -->
+
+        <div class="form-container">
+
+            <h2>
+                Enquiry Form
+            </h2>
+
+            <form>
+
+
+                <div class="form-row">
+
+                    <div class="form-group">
+
+                        <label for="name">
+                            FULL NAME
+                        </label>
+
+                        <input
+                            type="text"
+                            id="name"
+                            placeholder="Enter your name"
+                            required
+                        >
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="email">
+                            EMAIL ADDRESS
+                        </label>
+
+                        <input
+                            type="email"
+                            id="email"
+                            placeholder="Enter your email"
+                            required
+                        >
+
+                    </div>
+
+                </div>
+
+
+                <div class="form-row">
+
+                    <div class="form-group">
+
+                        <label for="phone">
+                            PHONE NUMBER
+                        </label>
+
+                        <input
+                            type="tel"
+                            id="phone"
+                            placeholder="Enter your phone number"
+                        >
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="type">
+                            ENQUIRY TYPE
+                        </label>
+
+                        <select id="type">
+
+                            <option value="">
+                                Select an option
+                            </option>
+
+                            <option>
+                                Product Enquiry
+                            </option>
+
+                            <option>
+                                Order Enquiry
+                            </option>
+
+                            <option>
+                                Custom Watch
+                            </option>
+
+                            <option>
+                                Partnership
+                            </option>
+
+                            <option>
+                                Other
+                            </option>
+
+                        </select>
+
+                    </div>
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="budget">
+                        APPROXIMATE BUDGET
+                    </label>
+
+                    <select id="budget">
+
+                        <option value="">
+                            Select your budget
+                        </option>
+
+                        <option>
+                            Under ₹15,000
+                        </option>
+
+                        <option>
+                            ₹15,000 – ₹25,000
+                        </option>
+
+                        <option>
+                            ₹25,000 – ₹50,000
+                        </option>
+
+                        <option>
+                            Above ₹50,000
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="message">
+                        YOUR MESSAGE
+                    </label>
+
+                    <textarea
+                        id="message"
+                        placeholder="Tell us how we can help..."
+                        required
+                    ></textarea>
+
+                </div>
+
+
+                <button
+                    type="submit"
+                    class="submit-btn"
+                >
+                    SEND ENQUIRY
+                </button>
+
+            </form>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= FOOTER ================= -->
+
+    <footer>
+
+        <div class="logo">
+            VELORA
+        </div>
+
+        <p>
+            © 2026 VELORA. All rights reserved.
+        </p>
+
+    </footer>
+
+</body>
+</html>

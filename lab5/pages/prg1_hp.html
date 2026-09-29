@@ -1,0 +1,754 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>VELORA | Luxury Watches</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background: #0b0c0e;
+            color: #f5f1eb;
+            font-family: "Inter", sans-serif;
+        }
+
+        /* ================= NAVBAR ================= */
+
+        .navbar {
+            height: 72px;
+            padding: 0 8%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            background: #0b0c0e;
+            border-bottom: 1px solid rgba(255,255,255,0.12);
+
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .logo {
+            color: white;
+            text-decoration: none;
+
+            font-family: "Cormorant Garamond", serif;
+            font-size: 30px;
+            letter-spacing: 7px;
+        }
+
+        nav {
+            display: flex;
+            gap: 42px;
+        }
+
+        nav a {
+            color: #eeeeee;
+            text-decoration: none;
+            font-size: 14px;
+
+            padding: 27px 4px 24px;
+
+            transition: 0.3s;
+        }
+
+        nav a:hover,
+        nav a.active {
+            color: #e6bd82;
+            border-bottom: 2px solid #e6bd82;
+        }
+
+        .nav-icons {
+            display: flex;
+            gap: 18px;
+        }
+
+        .nav-icons button {
+            background: none;
+            border: none;
+            color: white;
+            font-size: 21px;
+            cursor: pointer;
+        }
+
+        /* ================= HERO ================= */
+
+        .hero {
+            height: 620px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+        }
+
+        .hero-overlay {
+            position: absolute;
+            inset: 0;
+
+            background:
+                linear-gradient(
+                    90deg,
+                    rgba(5,6,7,0.95) 0%,
+                    rgba(5,6,7,0.70) 40%,
+                    rgba(5,6,7,0.15) 80%
+                );
+        }
+
+        .hero-content {
+            position: absolute;
+
+            top: 50%;
+            left: 11%;
+
+            transform: translateY(-50%);
+        }
+
+        .eyebrow {
+            color: #e6bd82;
+
+            font-size: 11px;
+            letter-spacing: 5px;
+
+            margin-bottom: 22px;
+        }
+
+        .hero h1 {
+            font-family: "Cormorant Garamond", serif;
+
+            font-size: clamp(55px, 6vw, 88px);
+            line-height: 0.92;
+
+            margin-bottom: 25px;
+        }
+
+        .hero-text {
+            color: #dddddd;
+
+            line-height: 1.7;
+            font-size: 16px;
+
+            margin-bottom: 32px;
+        }
+
+        .shop-btn {
+            display: inline-block;
+
+            padding: 15px 32px;
+
+            background: #f1d2a2;
+            color: #111;
+
+            text-decoration: none;
+
+            font-size: 13px;
+            font-weight: 600;
+
+            letter-spacing: 1px;
+
+            transition: 0.3s;
+        }
+
+        .shop-btn:hover {
+            background: white;
+            transform: translateY(-2px);
+        }
+
+        .shop-btn span {
+            margin-left: 12px;
+            font-size: 18px;
+        }
+
+        /* ================= BENEFITS ================= */
+
+        .benefits {
+            min-height: 110px;
+
+            padding: 20px 10%;
+
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+
+            background: #101214;
+
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .benefit {
+            display: flex;
+            align-items: center;
+
+            gap: 18px;
+
+            padding: 10px 30px;
+
+            border-right: 1px solid rgba(255,255,255,0.12);
+        }
+
+        .benefit:last-child {
+            border-right: none;
+        }
+
+        .benefit-icon {
+            color: #e6bd82;
+            font-size: 30px;
+        }
+
+        .benefit strong {
+            display: block;
+
+            font-size: 12px;
+            letter-spacing: 1px;
+        }
+
+        .benefit small {
+            display: block;
+
+            color: #aaa49d;
+
+            margin-top: 7px;
+
+            font-size: 11px;
+        }
+
+        /* ================= COLLECTION ================= */
+
+        .collection {
+            padding: 80px 10% 100px;
+
+            text-align: center;
+        }
+
+        .collection .eyebrow {
+            margin-bottom: 8px;
+        }
+
+        .collection h2 {
+            font-family: "Cormorant Garamond", serif;
+
+            font-size: 50px;
+
+            font-weight: 600;
+        }
+
+        .section-subtitle {
+            color: #aaa49d;
+
+            margin-top: 8px;
+            margin-bottom: 40px;
+        }
+
+        /* ================= PRODUCTS ================= */
+
+        .products {
+            display: grid;
+
+            grid-template-columns: repeat(4, 1fr);
+
+            gap: 24px;
+        }
+
+        .product-card {
+            background: #111315;
+
+            border: 1px solid rgba(255,255,255,0.12);
+
+            padding-bottom: 22px;
+
+            transition: 0.35s;
+        }
+
+        .product-card:hover {
+            transform: translateY(-8px);
+
+            border-color: rgba(230,189,130,0.55);
+        }
+
+        .product-image {
+            height: 270px;
+
+            overflow: hidden;
+
+            background: #080909;
+        }
+
+        .product-image img {
+            width: 100%;
+            height: 100%;
+
+            object-fit: cover;
+
+            transition: 0.5s;
+        }
+
+        .product-card:hover .product-image img {
+            transform: scale(1.07);
+        }
+
+        .product-card h3 {
+            font-size: 15px;
+
+            margin-top: 18px;
+        }
+
+        .price {
+            color: #dddddd;
+
+            margin: 9px 0 17px;
+
+            font-size: 14px;
+        }
+
+        .cart-btn {
+            width: 70%;
+
+            padding: 11px;
+
+            background: transparent;
+
+            border: 1px solid #777;
+
+            color: white;
+
+            cursor: pointer;
+
+            transition: 0.3s;
+        }
+
+        .cart-btn:hover {
+            background: white;
+            color: #111;
+        }
+
+        /* ================= ABOUT ================= */
+
+        .about {
+            text-align: center;
+
+            padding: 90px 20%;
+
+            background: #101214;
+        }
+
+        .about h2 {
+            font-family: "Cormorant Garamond", serif;
+
+            font-size: 50px;
+
+            margin-bottom: 18px;
+        }
+
+        .about p:last-child {
+            max-width: 650px;
+
+            margin: auto;
+
+            color: #aaa49d;
+
+            line-height: 1.8;
+        }
+
+        /* ================= FOOTER ================= */
+
+        footer {
+            padding: 35px 10%;
+
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            border-top: 1px solid rgba(255,255,255,0.1);
+
+            color: #aaa49d;
+        }
+
+        footer .logo {
+            font-size: 23px;
+        }
+
+        /* ================= RESPONSIVE ================= */
+
+        @media (max-width: 1000px) {
+
+            nav {
+                gap: 20px;
+            }
+
+            .products {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .benefits {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .benefit {
+                border-bottom: 1px solid rgba(255,255,255,0.1);
+            }
+        }
+
+        @media (max-width: 650px) {
+
+            .navbar {
+                padding: 0 5%;
+            }
+
+            nav {
+                display: none;
+            }
+
+            .hero {
+                height: 600px;
+            }
+
+            .hero-content {
+                left: 7%;
+                right: 7%;
+            }
+
+            .hero-overlay {
+                background: rgba(5,6,7,0.70);
+            }
+
+            .hero h1 {
+                font-size: 58px;
+            }
+
+            .hero-text br {
+                display: none;
+            }
+
+            .benefits {
+                grid-template-columns: 1fr;
+            }
+
+            .benefit {
+                border-right: none;
+                padding: 18px 0;
+            }
+
+            .products {
+                grid-template-columns: 1fr;
+            }
+
+            .collection {
+                padding: 60px 7%;
+            }
+
+            .about {
+                padding: 70px 8%;
+            }
+
+            footer {
+                flex-direction: column;
+                gap: 15px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- ================= NAVBAR ================= -->
+
+    <header class="navbar">
+
+        <a href="#" class="logo">
+            VELORA
+        </a>
+
+        <nav>
+            <a href="#" class="active">Home</a>
+            <a href="#collection">Shop</a>
+            <a href="/about">About</a>
+            <a href="/enquiry">Contact</a>
+        </nav>
+
+        <div class="nav-icons">
+            <button>⌕</button>
+            <button>♙</button>
+            <button>🛒</button>
+        </div>
+
+    </header>
+
+
+    <!-- ================= HERO ================= -->
+
+    <section class="hero">
+
+        <!-- Watch Image -->
+        <img
+            src="https://images.unsplash.com/photo-1523170335258-f5ed11844a49?auto=format&fit=crop&w=1800&q=90"
+            alt="Luxury Watch"
+        >
+
+        <div class="hero-overlay"></div>
+
+        <div class="hero-content">
+
+            <p class="eyebrow">
+                TIMEPIECES FOR A GREATER TOMORROW
+            </p>
+
+            <h1>
+                More Than Just<br>
+                A Watch
+            </h1>
+
+            <p class="hero-text">
+                Crafted with precision. Designed for those<br>
+                who value every moment.
+            </p>
+
+            <a href="#collection" class="shop-btn">
+                SHOP NOW <span>→</span>
+            </a>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= BENEFITS ================= -->
+
+    <section class="benefits">
+
+        <div class="benefit">
+            <span class="benefit-icon">◇</span>
+
+            <div>
+                <strong>2 YEAR WARRANTY</strong>
+                <small>Built to last</small>
+            </div>
+        </div>
+
+
+        <div class="benefit">
+            <span class="benefit-icon">▱</span>
+
+            <div>
+                <strong>FREE SHIPPING</strong>
+                <small>Across India</small>
+            </div>
+        </div>
+
+
+        <div class="benefit">
+            <span class="benefit-icon">↻</span>
+
+            <div>
+                <strong>EASY RETURNS</strong>
+                <small>Hassle free</small>
+            </div>
+        </div>
+
+
+        <div class="benefit">
+            <span class="benefit-icon">♢</span>
+
+            <div>
+                <strong>PREMIUM QUALITY</strong>
+                <small>Only the best materials</small>
+            </div>
+        </div>
+
+    </section>
+
+
+    <!-- ================= COLLECTION ================= -->
+
+    <section class="collection" id="collection">
+
+        <p class="eyebrow">
+            FEATURED COLLECTION
+        </p>
+
+        <h2>
+            Our Best Sellers
+        </h2>
+
+        <p class="section-subtitle">
+            Timeless designs. Exceptional craftsmanship.
+        </p>
+
+
+        <div class="products">
+
+
+            <!-- WATCH 1 -->
+
+            <article class="product-card">
+
+                <div class="product-image">
+
+                    <img
+                        src="https://images.unsplash.com/photo-1524805444758-089113d48a6d?auto=format&fit=crop&w=700&q=85"
+                        alt="Classic Steel Watch"
+                    >
+
+                </div>
+
+                <h3>
+                    Classic Steel
+                </h3>
+
+                <p class="price">
+                    ₹12,999
+                </p>
+
+                <button class="cart-btn">
+                    Add to Cart
+                </button>
+
+            </article>
+
+
+            <!-- WATCH 2 -->
+
+            <article class="product-card">
+
+                <div class="product-image">
+
+                    <img
+                        src="https://images.unsplash.com/photo-1533139502658-0198f920d8e8?auto=format&fit=crop&w=700&q=85"
+                        alt="Ocean Blue Watch"
+                    >
+
+                </div>
+
+                <h3>
+                    Ocean Blue
+                </h3>
+
+                <p class="price">
+                    ₹14,999
+                </p>
+
+                <button class="cart-btn">
+                    Add to Cart
+                </button>
+
+            </article>
+
+
+            <!-- WATCH 3 -->
+
+            <article class="product-card">
+
+                <div class="product-image">
+
+                    <img
+                        src="https://images.unsplash.com/photo-1547996160-81dfa63595aa?auto=format&fit=crop&w=700&q=85"
+                        alt="Heritage Chrono Watch"
+                    >
+
+                </div>
+
+                <h3>
+                    Heritage Chrono
+                </h3>
+
+                <p class="price">
+                    ₹18,999
+                </p>
+
+                <button class="cart-btn">
+                    Add to Cart
+                </button>
+
+            </article>
+
+
+            <!-- WATCH 4 -->
+
+            <article class="product-card">
+
+                <div class="product-image">
+
+                    <img
+                        src="https://images.unsplash.com/photo-1522312346375-d1a52e2b99b3?auto=format&fit=crop&w=700&q=85"
+                        alt="Rose Gold Watch"
+                    >
+
+                </div>
+
+                <h3>
+                    Rose Gold Edition
+                </h3>
+
+                <p class="price">
+                    ₹16,999
+                </p>
+
+                <button class="cart-btn">
+                    Add to Cart
+                </button>
+
+            </article>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= ABOUT ================= -->
+
+    <section class="about" id="about">
+
+        <p class="eyebrow">
+            THE VELORA STANDARD
+        </p>
+
+        <h2>
+            Precision in Every Second.
+        </h2>
+
+        <p>
+            We create watches that balance modern engineering
+            with timeless design. Every VELORA timepiece is
+            made to become part of your story.
+        </p>
+
+    </section>
+
+
+    <!-- ================= FOOTER ================= -->
+
+    <footer id="contact">
+
+        <div class="logo">
+            VELORA
+        </div>
+
+        <p>
+            © 2026 VELORA. All rights reserved.
+        </p>
+
+    </footer>
+
+</body>
+</html>
+
